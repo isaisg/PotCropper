@@ -1,0 +1,9 @@
+Package: PotCropper
+Title: What the package does (one line)
+Version: 0.2
+Authors@R: "Isai Salas Gonzalez <isai.salas.gonzalez@gmail.com> [aut, cre]"
+Description: Isai Salas Gonzalez <isai.salas.gonzalez@gmail.com> [aut, cre]
+Depends:
+    R (>= 3.0.2),polynom,EBImage
+License: What license is it under?
+LazyData: true
