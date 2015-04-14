@@ -62,8 +62,17 @@ determine_h1_h2_h3<-function(dir,file){
   dime<-dim(sapply(axes,"[[","values"))
   chico<-which(sapply(axes,"[[","values")==min(sapply(axes,"[[","values")))
   arreglo<-sapply(axes,"[[","name")
-  posi<-dime %% chico
-  isai<-arreglo[posi[2]]
+  if(chico == 1 || chico ==2)
+{
+  posi<-1
+}else{
+  if (chico == 3 || chico ==4){
+    posi<-2
+  }else{
+    posi<-3
+  }
+}
+  isai<-arreglo[posi]
   machear<-unlist(strsplit(isai,"_"))
   #use the smaller distance to find whod is h3
   h1<-intersect(atomic_elements[[1]],atomic_elements[[2]])
