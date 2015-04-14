@@ -287,7 +287,7 @@ subset_pots<-function(file_image=NA,dir="./",outdir="./",file_txt=paste(unlist(s
 			imagen<-readImage(paste(dir,imfiles[i],sep=""))
 			file_id<-unlist(strsplit(paste(imfiles[i]),"[.]"))[1]
 			file_txt<-paste(unlist(strsplit(paste(imfiles[i]),"[.]"))[1],"txt",sep=".")
-			for(i in 1:length(pots_positions)){
+			for(i in pots_positions){
 				section<-pots_from_point_matrix(imagen,pmatrix_from_image(dir,file_txt,barcode_position),i,size)
 				writeImage(section,paste(paste(outdir,paste(file_id,"pot",i,sep="_"),sep=""),"jpeg",sep="."))
 			}
@@ -303,7 +303,7 @@ subset_pots<-function(file_image=NA,dir="./",outdir="./",file_txt=paste(unlist(s
 			imagen<-readImage(paste(fdir,rfile,sep="/"))
 			file_id<-unlist(strsplit(paste(rfile),"[.]"))[1]
 			file_txt<-paste(unlist(strsplit(tail(unlist(strsplit(file_image,"/")),n=1),"[.]"))[1],"txt",sep=".")
-			for(i in 1:length(pots_positions)){
+			for(i in pots_positions){
 				section<-pots_from_point_matrix(imagen,pmatrix_from_image(fdir,file_txt,barcode_position),i,size)
 				writeImage(section,paste(paste(outdir,paste(file_id,"pot",i,sep="_"),sep=""),"jpeg",sep="."))
 
@@ -312,7 +312,7 @@ subset_pots<-function(file_image=NA,dir="./",outdir="./",file_txt=paste(unlist(s
 		else{
 		imagen<-readImage(paste(dir,file_image,sep=""))
 		file_id<-unlist(strsplit(paste(file_image),"[.]"))[1]
-			for(i in 1:length(pots_positions)){
+			for(i in pots_positions){
 				section<-pots_from_point_matrix(imagen,pmatrix_from_image(dir,file_txt,barcode_position),i,size)
 				writeImage(section,paste(paste(outdir,paste(file_id,"pot",i,sep="_"),sep=""),"jpeg",sep="."))
 	
