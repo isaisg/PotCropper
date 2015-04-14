@@ -35,7 +35,7 @@ distanceaxis<-function(point1,point2)
   return(resultado)
 }
 combn_distances_axis<-function(list_vars){
-  combi_individuasl<-combn(sapply(list_vars,"[[","name"),2)
+  combi_individuals<-combn(sapply(list_vars,"[[","name"),2)
   distan_comb<-list()
   for(i in 1:ncol(combi_individuals)){
     part_1<-list_vars[which(sapply(list_vars,"[[","name")==combi_individuals[,i][1])]
